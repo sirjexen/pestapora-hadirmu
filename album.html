@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Album — Pestapora Hadirmu</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+
+  <!-- ================= ALBUM ================= -->
+  <section class="sheet" style="--tilt:-.3deg">
+    <div class="tape tc"></div>
+    <div class="kicker">bab dua</div>
+    <h2>Albumnya, Diputar di Sini</h2>
+    <p class="lead">Enam lagu dari Melia D. Pasha. Tekan putar, dan biarkan halamannya yang menemani.</p>
+
+    <div class="player">
+      <div class="player-top">
+        <div class="disc" id="disc"></div>
+        <div class="now">
+          <div class="t" id="nowTitle">Pilih lagu di bawah</div>
+          <div class="a">Pestapora Hadirmu &middot; Melia D. Pasha</div>
+          <div class="eq" id="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="cbtn" id="prevBtn" aria-label="Sebelumnya"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+        <button class="cbtn main" id="playBtn" aria-label="Putar"><svg viewBox="0 0 24 24" id="playIcon"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="cbtn" id="nextBtn" aria-label="Berikutnya"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+        <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
+        <div class="time" id="time">0:00 / 0:00</div>
+      </div>
+      <div class="playlist" id="playlist"></div>
+
+      <!-- panggung khusus lagu batman -->
+      <div class="night" id="nightStage">
+        <div class="moon"></div>
+        <div class="beam"></div>
+        <svg class="bat" style="top:14%" viewBox="0 0 60 24"><path d="M30 12 C24 4 12 2 2 8 C8 10 10 14 11 18 C15 13 22 12 30 18 C38 12 45 13 49 18 C50 14 52 10 58 8 C48 2 36 4 30 12Z" fill="#10101f"/></svg>
+        <svg class="bat b2" viewBox="0 0 60 24"><path d="M30 12 C24 4 12 2 2 8 C8 10 10 14 11 18 C15 13 22 12 30 18 C38 12 45 13 49 18 C50 14 52 10 58 8 C48 2 36 4 30 12Z" fill="#10101f"/></svg>
+        <svg class="bat b3" viewBox="0 0 60 24"><path d="M30 12 C24 4 12 2 2 8 C8 10 10 14 11 18 C15 13 22 12 30 18 C38 12 45 13 49 18 C50 14 52 10 58 8 C48 2 36 4 30 12Z" fill="#10101f"/></svg>
+        <h3>Panggung Kecil untuk Lagu Nomor Lima</h3>
+        <p>Di lagumu, aku ini Batman: memikul banyak hal tanpa banyak cerita. Jadi kubuatkan satu sudut malam di halaman ini, lengkap dengan kelelawar yang lewat dan lampu sorot yang menyapu. Kekuatan si tokoh berjubah itu, kata lagumu, adalah memilih tetap berjalan meski lelah.</p>
+        <svg class="hero-cape" viewBox="0 0 100 120"><path d="M50 8 C60 8 66 16 66 26 L78 96 C66 86 58 92 50 100 C42 92 34 86 22 96 L34 26 C34 16 40 8 50 8Z" fill="#14142a"/><circle cx="50" cy="22" r="11" fill="#14142a"/><path d="M39 20 L50 30 L61 20 L61 26 L50 34 L39 26Z" fill="#f0dfae"/></svg>
+        <div class="rooftop"></div>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px">Catatan kecil: lagu nomor empat ditemani si kucing penjelajah, dan lagu nomor dua ditemani buku besar. Potongannya ada di daftar lagu, seperti stiker yang ditempel di pinggir halaman.</p>
+  </section>
+
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<audio id="player" preload="metadata"></audio>
+
+<script src="guard.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='album.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+
+/* ---------- pemutar album ---------- */
+var tracks=[
+ {t:'First What I Seeing', f:'audio/01_First_What_I_Seeing.mp3', m:'Awal semuanya: sebuah taruhan yang berubah jadi obrolan, lalu permainan catur yang tidak mau cepat selesai.'},
+ {t:'About You, R.', f:'audio/02_About_You_R.mp3', m:'Tentang seseorang yang digambarkan sebagai perpustakaan yang menjelma manusia; buku yang tidak bosan dibaca ulang.', img:'img/04_lagu_about_you_buku.png'},
+ {t:"Fallin' for You", f:'audio/03_Fallin_for_You.mp3', m:'Pengakuan yang pelan-pelan: jatuh hati pada cara seseorang merangkai kata, dan pada nasihat yang tidak pernah terasa menggurui.'},
+ {t:'WDYT About Penjelajah?', f:'audio/04_WDYT_About_Penjelajah.mp3', m:'Tentang si penjelajah yang pedulinya kebangetan, ditemani kucing kecil yang sama anehnya.', img:'img/06_lagu_penjelajah_kucing.png'},
+ {t:'Look Like Batman', f:'audio/05_Look_Like_Batman.mp3', m:'Untuk yang memikul banyak hal tanpa banyak cerita. Panggung malamnya ada tepat di bawah daftar lagu ini.', img:'img/07_lagu_batman_buku.png'},
+ {t:'Sajak Perayaan', f:'audio/06_Sajak_Perayaan.mp3', m:'Puisi ulang tahun ke-21, dibacakan langsung oleh penulisnya. Halaman khususnya ada di bab tiga.'}
+];
+var audio=document.getElementById('player');
+var playlistEl=document.getElementById('playlist');
+var nowTitle=document.getElementById('nowTitle');
+var disc=document.getElementById('disc');
+var eq=document.getElementById('eq');
+var playIcon=document.getElementById('playIcon');
+var bar=document.getElementById('bar');
+var timeEl=document.getElementById('time');
+var cur=-1;
+
+tracks.forEach(function(tr,i){
+  var b=document.createElement('button');
+  b.className='track'; b.type='button';
+  var inner='<span class="num">'+(i+1)+'</span><span><span class="tt">'+tr.t+'</span><div class="mm">'+tr.m+'</div></span>';
+  if(tr.img){ inner+='<img src="'+tr.img+'" alt="" style="width:74px;height:auto;border-radius:4px;margin-left:auto;transform:rotate(2deg);box-shadow:0 4px 10px rgba(91,74,66,.25)">'; }
+  b.innerHTML=inner;
+  b.addEventListener('click', function(){ playTrack(i); });
+  playlistEl.appendChild(b);
+});
+function fmt(s){ if(!isFinite(s)) s=0; s=Math.floor(s); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+function setIcon(){ playIcon.innerHTML = audio.paused ? '<path d="M8 5v14l11-7z"/>' : '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'; }
+function playTrack(i){
+  if(i===cur){ toggle(); return; }
+  cur=i;
+  audio.src=tracks[i].f;
+  audio.play();
+  nowTitle.textContent=(i+1)+'. '+tracks[i].t;
+  document.querySelectorAll('.track').forEach(function(el,j){ el.classList.toggle('playing', j===i); });
+  document.getElementById('nightStage').style.boxShadow = (i===4) ? '0 0 0 3px rgba(240,223,174,.65), 0 18px 34px rgba(25,25,48,.45)' : '';
+}
+function toggle(){ if(cur<0){ playTrack(0); return; } if(audio.paused) audio.play(); else audio.pause(); }
+document.getElementById('playBtn').addEventListener('click', toggle);
+document.getElementById('nextBtn').addEventListener('click', function(){ playTrack((cur+1+tracks.length)%tracks.length); });
+document.getElementById('prevBtn').addEventListener('click', function(){ playTrack((cur-1+tracks.length)%tracks.length); });
+audio.addEventListener('play', function(){ disc.classList.add('spin'); eq.classList.add('on'); setIcon(); });
+audio.addEventListener('pause', function(){ disc.classList.remove('spin'); eq.classList.remove('on'); setIcon(); });
+audio.addEventListener('ended', function(){ if(cur<tracks.length-1) playTrack(cur+1); });
+audio.addEventListener('timeupdate', function(){
+  if(audio.duration){ bar.style.width=(audio.currentTime/audio.duration*100)+'%'; }
+  timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);
+});
+document.getElementById('progress').addEventListener('click', function(e){
+  if(!audio.duration) return;
+  var r=this.getBoundingClientRect();
+  audio.currentTime=audio.duration*((e.clientX-r.left)/r.width);
+});
+</script>
+</body>
+</html>

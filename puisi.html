@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puisi — Pestapora Hadirmu</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+
+  <!-- ================= PUISI ================= -->
+  <section class="sheet" style="--tilt:.4deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker center">bab tiga</div>
+    <h2 class="center">Sajak Perayaan</h2>
+    <div class="poem-wrap">
+      <div class="cutout floaty" style="--r:-2deg"><div class="mini-tape"></div><img src="img/08_puisi_dibacakan.png" alt="Melia membacakan puisi"><div class="cap">dibacakan oleh penulisnya</div></div>
+      <div class="cutout video-cut floaty d1" style="--r:2deg"><div class="mini-tape"></div><video src="img/doodle.mp4" autoplay muted loop playsinline></video><div class="cap">doodle ulang tahun darinya</div></div>
+      <div class="cutout floaty d2" style="--r:1.6deg"><div class="mini-tape"></div><img src="adegan/puisi.jpg" alt="Adegan dia membacakan puisi"><div class="cap">saat puisinya dibacakan</div></div>
+    </div>
+    <div class="poem" style="margin-top:26px">
+      <p class="verse">Hari ini semesta membuka halaman baru kisahku.<br>
+      Begitu banyak luka yang kusembunyikan di balik senyum.<br>
+      Semoga di halaman-halaman berikutnya hidup lebih ramah,<br>
+      yang pergi menemukan jalan untuk tumbuh kembali,<br>
+      yang kuperjuangkan menemukan rumahnya,<br>
+      dan yang tulus kulepaskan berhenti menjadi luka.</p>
+      <span class="closing">&ldquo;Teruslah menjadi puisi yang tak pernah selesai ditulis semesta.&rdquo;</span>
+    </div>
+    <p class="small center" style="margin-top:16px">Itu penggalan puisi ulang tahun yang kamu bacakan untukku. Dengarkan versi suaramu sendiri lewat lagu nomor enam di pemutar album.</p>
+    <div class="center" style="margin-top:14px">
+      <button class="cbtn main" id="poemBtn" style="width:auto;border-radius:999px;padding:0 26px;height:52px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:15px">Putar Puisinya</button>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<audio id="player" preload="metadata"></audio>
+
+<script src="guard.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='puisi.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+
+/* tombol putar puisi: mainkan lagu 6 lewat pemutar di halaman album */
+var player=new Audio('audio/06_Sajak_Perayaan.mp3');
+document.getElementById('poemBtn').addEventListener('click', function(){
+  player.currentTime=0; player.play();
+});
+</script>
+</body>
+</html>

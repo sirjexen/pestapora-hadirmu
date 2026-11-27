@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerita Kita — Pestapora Hadirmu</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+
+  <!-- ================= CERITA ================= -->
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">bab satu</div>
+    <h2>Cerita Kita, Per Lembar</h2>
+    <p class="lead">Tidak semua cerita dimulai dengan cara yang megah. Cerita kita dimulai dari sebuah taruhan.</p>
+
+    <div class="babak">
+      <div class="cutout video-cut floaty" style="--r:-1.6deg;max-width:330px"><div class="mini-tape"></div><video src="adegan/dosen.mp4" poster="adegan/dosen.jpg" autoplay muted loop playsinline></video><div class="cap">adegan: dosen</div></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout floaty" style="--r:-2.5deg"><div class="mini-tape"></div><img src="img/02_cerita_catur.png" alt="Bermain catur berdua"><div class="cap">taruhan &amp; catur</div></div>
+      <div class="txt"><div class="no">lembar 01</div><h3>Kalah Taruhan, Menang Obrolan</h3>
+      <p>Kita pertama kali benar-benar mengobrol karena kamu kalah taruhan, dan hukumannya adalah bicara denganku. Dari situ kita main catur. Kamu yang awalnya belajar, lama-lama justru melewatiku.</p></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout video-cut floaty d1" style="--r:1.8deg;max-width:330px"><div class="mini-tape"></div><video src="adegan/catur.mp4" poster="adegan/catur.jpg" autoplay muted loop playsinline></video><div class="cap">adegan: catur</div></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout floaty d1" style="--r:2deg"><div class="mini-tape"></div><img src="img/03_cerita_uno_telepon.png" alt="Bermain kartu sambil teleponan"><div class="cap">uno &amp; teleponan</div></div>
+      <div class="txt"><div class="no">lembar 02</div><h3>Uno yang Sengaja Dilama-lamain</h3>
+      <p>Kita main Uno sambil teleponan berjam-jam. Jujur saja, aku sering menahan kartu terakhirku supaya teleponnya tidak cepat selesai. Kamu cerita apa saja: nilai semester, ayahmu yang santai, sampai dipanggil ibumu untuk mandi di tengah telepon.</p></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout video-cut floaty" style="--r:-1.8deg;max-width:330px"><div class="mini-tape"></div><video src="adegan/uno.mp4" poster="adegan/uno.jpg" autoplay muted loop playsinline></video><div class="cap">adegan: uno</div></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout floaty d2" style="--r:-1.6deg"><div class="mini-tape"></div><img src="img/11_cerita_renggang_pita.png" alt="Duduk berjauhan dihubungkan pita pink"><div class="cap">sempat menjauh</div></div>
+      <div class="txt"><div class="no">lembar 03</div><h3>Lembar yang Sempat Kosong</h3>
+      <p>Ada masa kita membeku. Tidak ada pertengkaran besar, tidak ada perpisahan yang jelas. Kamu berhenti bercerita, dan kita hilang kontak begitu saja. Lembar ini memang kosong cukup lama, dan itu salahku. Untungnya pitanya tidak pernah benar-benar putus.</p></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout floaty" style="--r:2.4deg"><div class="mini-tape"></div><img src="img/04_lagu_about_you_buku.png" alt="Membaca buku besar berdua"><div class="cap">buku itu sampai</div></div>
+      <div class="txt"><div class="no">lembar 04</div><h3>Buku yang Akhirnya Dibaca</h3>
+      <p>Lewat anonymous chat, kita terhubung lagi. Aku memberimu buku yang kutulis dalam satu malam, &ldquo;Sebelum Semua Teruntuk&rdquo;, dan kamu membacanya. Setelah itu kita dekat lagi, bahkan kamu sempat menyamar waktu mengobrol denganku. Itu lucu sekali.</p></div>
+    </div>
+
+    <div class="babak">
+      <div class="cutout floaty d1" style="--r:-2deg"><div class="mini-tape"></div><img src="img/05_album_musik_berdua.png" alt="Mendengarkan musik berdua"><div class="cap">album untukku</div></div>
+      <div class="txt"><div class="no">lembar 05</div><h3>Lalu Kamu Membuat Album</h3>
+      <p>Di ulang tahunku yang ke-21, kamu memberiku &ldquo;Pestapora Hadirmu&rdquo;: enam lagu dan puisi dengan suaramu sendiri, dua sertifikat, dan sebuah kartu. Lembar berikutnya adalah album itu, silakan diputar.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='cerita.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

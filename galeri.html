@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri Kita — Pestapora Hadirmu</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+
+  <!-- ================= GALERI VIDEO ================= -->
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">bab bonus</div>
+    <h2>Galeri Kita, yang Bergerak</h2>
+    <p class="lead">Adegan-adegan kecil kita, dianimasikan. Semuanya diputar otomatis, sunyi, dan berulang — seperti kenangan yang memang tidak mau habis.</p>
+
+    <div class="vids">
+      <div class="cutout floaty" style="--r:-1.8deg"><div class="mini-tape"></div><video src="adegan/ngambek.mp4" poster="adegan/ngambek.jpg" autoplay muted loop playsinline></video><div class="cap">waktu kamu ngambek</div></div>
+      <div class="cutout floaty d1" style="--r:1.6deg"><div class="mini-tape"></div><video src="adegan/baikan.mp4" poster="adegan/baikan.jpg" autoplay muted loop playsinline></video><div class="cap">lalu baikan lagi</div></div>
+      <div class="cutout floaty d2" style="--r:-1.2deg"><div class="mini-tape"></div><video src="adegan/dosen.mp4" poster="adegan/dosen.jpg" autoplay muted loop playsinline></video><div class="cap">dosen dan tugasnya</div></div>
+      <div class="cutout floaty" style="--r:2deg"><div class="mini-tape"></div><video src="adegan/catur.mp4" poster="adegan/catur.jpg" autoplay muted loop playsinline></video><div class="cap">catur yang dilama-lamain</div></div>
+      <div class="cutout floaty d1" style="--r:-2.2deg"><div class="mini-tape"></div><video src="adegan/uno.mp4" poster="adegan/uno.jpg" autoplay muted loop playsinline></video><div class="cap">kartu uno berdua</div></div>
+      <div class="cutout floaty d2" style="--r:1.2deg"><div class="mini-tape"></div><video src="adegan/telepon_ayam.mp4" poster="adegan/telepon_ayam.jpg" autoplay muted loop playsinline></video><div class="cap">teleponan sampai ayam berkokok</div></div>
+      <div class="cutout floaty" style="--r:-1.5deg"><div class="mini-tape"></div><video src="adegan/tengil.mp4" poster="adegan/tengil.jpg" autoplay muted loop playsinline></video><div class="cap">waktu kita tengil</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>
