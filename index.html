@@ -255,6 +255,17 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 .gallery .cutout{max-width:330px}
 .gallery .cutout.wide{max-width:250px}
 
+/* pesan-pesan kecil */
+.notes{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:20px; margin-top:26px}
+.note{position:relative; padding:30px 18px 18px; border-radius:3px;
+  font-family:'Caveat',cursive; font-size:20.5px; line-height:1.5; color:#6b4a56;
+  box-shadow:0 8px 18px rgba(91,74,66,.16); transform:rotate(var(--r,-1.5deg));
+  transition:transform .3s ease}
+.note:hover{transform:rotate(0deg) scale(1.04); z-index:2}
+.note::before{content:""; position:absolute; top:-11px; left:50%; transform:translateX(-50%) rotate(-2deg);
+  width:74px; height:22px; background:var(--tape); box-shadow:0 2px 4px rgba(91,74,66,.12)}
+.note.p1{background:#fff0f5}.note.p2{background:#fff8ea}.note.p3{background:#fdeef4}.note.p4{background:#fffdf4}
+
 /* surat */
 .letter{background:
   repeating-linear-gradient(180deg, transparent 0 33px, rgba(231,124,162,.14) 33px 34px), var(--paper)}
@@ -434,6 +445,35 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:var(--pink-deep)}
     </div>
   </section>
 
+  <!-- ================= PESAN-PESAN KECIL ================= -->
+  <!-- CATATAN: teks pesan-pesan di bawah ini draf dari Rafly, bebas diedit atau dihapus sebelum dibagikan ke Melia. -->
+  <section class="sheet" style="--tilt:.35deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">bab lima</div>
+    <h2>Pesan-Pesan Kecil Untukmu</h2>
+    <div class="babak" style="margin-top:14px">
+      <div class="cutout floaty" style="--r:-2deg"><div class="mini-tape"></div><img src="img/pesan_toples.jpg" alt="Toples kaca berisi lipatan kertas pesan"><div class="cap">satu toples penuh</div></div>
+      <div class="txt"><p class="lead">Album darimu isinya enam lagu, jadi balasanku tidak cukup cuma satu surat. Kutambah satu toples penuh pesan kecil. Ambil satu-satu, bacanya pelan-pelan saja, tidak usah dihabiskan hari ini.</p></div>
+    </div>
+    <div class="center" style="margin-top:22px">
+      <div class="cutout floaty d1" style="--r:1.6deg;max-width:520px"><div class="mini-tape"></div><img src="img/pesan_papan.jpg" alt="Papan berisi catatan-catatan kecil"><div class="cap">papan pesannya</div></div>
+    </div>
+    <div class="notes">
+      <div class="note p1" style="--r:-2deg">Kita mulai dari taruhan yang kamu kalah. Sampai hari ini, itu kekalahan yang paling aku syukuri.</div>
+      <div class="note p2" style="--r:1.6deg">Makasih sudah mau cerita lagi. Dulu kamu berhenti bercerita, dan aku paham kenapa. Yang sekarang tidak akan aku sia-siakan.</div>
+      <div class="note p3" style="--r:-1.2deg">Ada cerita yang dulu kamu titipkan tapi tidak aku jaga. Itu salahku, titik. Pesan ini biar tertulis jelas.</div>
+      <div class="note p4" style="--r:2.2deg">Kamu orang pertama yang bikin proposal cuma buat berteman. Jangan pernah berhenti bikin hal-hal semacam itu buat orang lain, apalagi gara-gara aku.</div>
+      <div class="note p1" style="--r:1.4deg">Suaramu di album itu sudah aku putar berkali-kali. Jadi tolong jangan bilang itu bukan apa-apa lagi.</div>
+      <div class="note p2" style="--r:-2.2deg">Kalau lagi capek dan kepalamu ramai, ceritanya boleh ke sini. Aku masih pendengar terbaik. Sertifikatnya aja ada.</div>
+      <div class="note p3" style="--r:1.8deg">Di lagumu, aku ini perpustakaan. Kalau begitu kamu pembaca favoritku, dan aku tidak buru-buru kamu sampai ke halaman terakhir.</div>
+      <div class="note p4" style="--r:-1.6deg">Selamat, kamu resmi jadi orang yang paling sering muncul di kepalaku setiap dengar kata pestapora.</div>
+      <div class="note p1" style="--r:2deg">Tidak semua orang dapat lembar kedua. Makasih sudah ngasih aku lembar kedua.</div>
+    </div>
+    <div class="center" style="margin-top:30px">
+      <div class="cutout floaty d2" style="--r:-1.8deg;max-width:460px"><div class="mini-tape"></div><img src="img/pesan_pesawat.jpg" alt="Pesawat kertas terbang dari Rafly ke Melia"><div class="cap">sisanya menyusul, pakai pesawat kertas</div></div>
+    </div>
+  </section>
+
   <!-- ================= SURAT PENUTUP ================= -->
   <!-- DRAF SURAT: teks surat di bawah ini masih draf untuk Rafly. Edit dulu sebelum halaman ini dibagikan ke Melia. -->
   <section class="sheet letter" style="--tilt:.3deg">
@@ -448,8 +488,9 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:var(--pink-deep)}
       <p>Semoga halaman-halaman berikutnya ramah ke kamu juga. Kamu juga puisi yang tidak pernah selesai ditulis semesta.</p>
     </div>
     <div class="sign">— Rafly</div>
-    <div class="center" style="margin-top:20px">
-      <div class="cutout floaty" style="--r:-1.5deg;max-width:340px"><div class="mini-tape"></div><img src="img/12_penutup_surat.png" alt="Surat dengan pena bulu"><div class="cap">tersegel dengan hati</div></div>
+    <div style="margin-top:20px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
+      <div class="cutout floaty" style="--r:-1.5deg;max-width:330px"><div class="mini-tape"></div><img src="img/12_penutup_surat.png" alt="Surat dengan pena bulu"><div class="cap">tersegel dengan hati</div></div>
+      <div class="cutout floaty d1" style="--r:1.8deg;max-width:330px"><div class="mini-tape"></div><img src="img/pesan_kotak.jpg" alt="Kotak surat pink penuh surat"><div class="cap">kotak suratnya selalu terbuka</div></div>
     </div>
   </section>
 
