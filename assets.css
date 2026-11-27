@@ -365,3 +365,28 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:#a53d64}
   .plan .knot{display:none}
   .plan:nth-child(even) .tx{text-align:left}
 }
+
+/* ===== E-SERTIFIKAT UNTUK MELIA ===== */
+.cert{position:relative; background:#fffdf6; border:2px solid var(--acc,#d9577f); border-radius:6px;
+  padding:30px 30px 24px; margin:0 auto 30px; max-width:660px; text-align:center;
+  box-shadow:0 6px 16px rgba(91,74,66,.13)}
+.cert::before{content:""; position:absolute; inset:7px; border:1.5px solid var(--acc,#d9577f); border-radius:4px; opacity:.55; pointer-events:none}
+.cert .c-kick{font-family:'Caveat',cursive; font-size:18px; color:var(--acc,#d9577f); letter-spacing:2px}
+.cert .c-title{font-family:'Fraunces',serif; font-size:29px; letter-spacing:5px; color:#70424f; margin:2px 0 4px}
+.cert .c-given{font-size:13.5px; color:#8a7466; letter-spacing:1px}
+.cert .c-name{font-family:'Caveat',cursive; font-size:42px; color:#a53d64; line-height:1.15; margin:4px 0 2px}
+.cert .c-award{font-family:'Fraunces',serif; font-size:19.5px; color:#70424f; margin-top:8px}
+.cert .c-desc{font-size:14.5px; line-height:1.7; color:#5f4c40; max-width:520px; margin:6px auto 0}
+.cert .c-foot{display:flex; justify-content:space-between; align-items:flex-end; margin-top:20px; padding:0 8px; position:relative}
+.cert .c-date{font-size:12.5px; color:#8a7466; text-align:left; line-height:1.6}
+.cert .c-sign{font-size:12.5px; color:#8a7466; line-height:1.6}
+.cert .c-sign .sig{font-family:'Caveat',cursive; font-size:27px; color:#70424f; display:block; line-height:1.1}
+.cert .c-stamp{position:absolute; right:86px; bottom:-8px; width:86px; height:86px; border-radius:50%;
+  border:3px solid rgba(178,43,82,.75); color:rgba(178,43,82,.85); transform:rotate(-13deg);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0;
+  font-family:'Fraunces',serif; pointer-events:none}
+.cert .c-stamp::before{content:""; position:absolute; inset:4px; border-radius:50%; border:1.5px solid rgba(178,43,82,.6)}
+.cert .c-stamp .s1{font-size:8px; letter-spacing:1px}
+.cert .c-stamp .s2{font-size:16.5px; font-weight:700; letter-spacing:1px; line-height:1.05}
+.cert .c-stamp .s3{font-size:7.5px; letter-spacing:1.5px}
+@media(max-width:640px){ .cert .c-name{font-size:34px} .cert .c-stamp{right:64px; width:72px; height:72px} .cert .c-stamp .s2{font-size:14px} }
