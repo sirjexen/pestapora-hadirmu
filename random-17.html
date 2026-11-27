@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayah, Voli, dan Ketenangan Hidup — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 17 &middot; hal random</div>
+    <h2>Ayah, Voli, dan Ketenangan Hidup</h2>
+    <p class="scene-desc">Aku mengagumi ayahmu dari jauh, lewat ceritamu saja. Beliau main voli sampai lupa waktu, pulang dengan wajah puas, dimarahi ibumu, lalu menerimanya sambil tertawa, seolah dimarahi itu bagian dari jadwal olahraga juga. Itu tingkat ketenangan hidup yang ingin kupelajari. Kebanyakan orang pulang telat dengan rasa bersalah, ayahmu pulang telat dengan tawa. Kalau suatu hari aku bisa sesantai itu menghadapi omelan, berarti aku sudah naik kelas sebagai manusia.</p>
+    <div class="scene-nav">
+      <a href="random-16.html">&larr; Sidang Dua Anak Tunggal</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="random-18.html">Panggilan Mandi Paling Berkuasa &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prosedur Ngambek dan Baikan — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 20 &middot; hal random</div>
+    <h2>Prosedur Ngambek dan Baikan</h2>
+    <p class="scene-desc">Sebagai penutup, berikut tata cara resmi: ngambekmu itu ada prosedurnya, tidak asal diam. Ada tahap muka ditekuk, tahap jawaban pendek, lalu tahap menunggu aku sadar sendiri salahku di mana. Setelah itu masuk prosedur baikan, yang menurut aturan tidak tertulis harus melibatkan bunga dan permintaan maaf yang sungguh-sungguh. Aku sudah hafal urutannya sekarang, walau kadang tetap telat sadar. Anggap bab ini buku panduannya, supaya besok-besok aku tidak perlu mengulang dari halaman satu.</p>
+    <div class="scene-nav">
+      <a href="random-19.html">&larr; Kopi Dingin, Perut Dilupakan</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <span></span>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

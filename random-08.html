@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alarm Resmi Bernama Cukurukuk — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 8 &middot; hal random</div>
+    <h2>Alarm Resmi Bernama Cukurukuk</h2>
+    <p class="scene-desc">Di kosmu ada alarm yang tidak bisa disetel, tidak bisa ditunda, dan tidak pernah kehabisan baterai: ayam tetangga. Setiap kita teleponan pagi-pagi, dia ikut nimbrung dengan bunyi andalannya, cukurukuk, keras sekali, seperti takut tidak diundang. Aku sudah mengusulkan dia diangkat jadi moderator telepon kita, karena sejauh ini dialah yang paling disiplin soal waktu. Kita yang ngobrol sampai lupa jam saja kalah rajin dari seekor ayam yang bahkan tidak ikut bicara.</p>
+    <div class="scene-nav">
+      <a href="adegan-tengil.html">&larr; Saat Tengil</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="random-09.html">Pengakuan Dosa di Meja Uno &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

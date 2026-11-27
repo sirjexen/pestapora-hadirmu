@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catur: Aku Menang, Titik — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 10 &middot; hal random</div>
+    <h2>Catur: Aku Menang, Titik</h2>
+    <p class="scene-desc">Bab ini pendek saja isinya, karena kebenarannya memang sederhana: di catur, aku yang menang. Kamu boleh protes, boleh bilang papannya miring, boleh menyalahkan bidak, tapi hasil akhir tetap sama. Kamu itu anak sastra, kata-kata adalah wilayahmu, sedangkan papan hitam-putih ini wilayahku, dan aku menjaganya dengan sangat serius. Anggap saja ini satu-satunya piala yang kupunya dalam hubungan pertemanan kita, jadi biarkan aku memolesnya sedikit lewat bab ini.</p>
+    <div class="scene-nav">
+      <a href="random-09.html">&larr; Pengakuan Dosa di Meja Uno</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="random-11.html">Proposal Paling Resmi Sedunia &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

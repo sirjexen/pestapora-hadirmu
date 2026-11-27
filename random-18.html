@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panggilan Mandi Paling Berkuasa — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 18 &middot; hal random</div>
+    <h2>Panggilan Mandi Paling Berkuasa</h2>
+    <p class="scene-desc">Di tengah telepon kita yang serius, ada satu suara yang tidak pernah bisa dibantah siapa pun: ibumu, memanggilmu mandi. Aku bisa sedang cerita panjang, kamu bisa sedang tertawa, tapi sekali panggilan itu terdengar, semua agenda berhenti. Aku selalu menunggu di seberang telepon, karena aku tahu kamu pasti kembali, biasanya sambil menggerutu kecil. Ibumu itu cerewet karena sayang, dan panggilan mandinya adalah bukti paling konsisten dari sayang itu.</p>
+    <div class="scene-nav">
+      <a href="random-17.html">&larr; Ayah, Voli, dan Ketenangan Hidup</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="random-19.html">Kopi Dingin, Perut Dilupakan &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>

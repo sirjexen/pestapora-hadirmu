@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penjelajah dan Kucing Anehnya — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css?v=3">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 15 &middot; hal random</div>
+    <h2>Penjelajah dan Kucing Anehnya</h2>
+    <p class="scene-desc">Kalau aku Batman si perpustakaan, kamu adalah penjelajah, ditemani kucing kecil yang sama anehnya dengan pemiliknya. Kamu berangkat ke mana-mana dengan rasa penasaran yang tidak ada habisnya, bertanya ini-itu, mencatat hal-hal kecil yang orang lain lewatkan begitu saja. Kucingmu itu, dalam bayanganku, tugasnya cuma ikut dan pura-pura paham peta. Kalian berdua pasangan ekspedisi paling tidak meyakinkan yang pernah ada, tapi entah kenapa selalu pulang membawa cerita bagus.</p>
+    <div class="scene-nav">
+      <a href="random-14.html">&larr; Batman yang Isinya Buku</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="random-16.html">Sidang Dua Anak Tunggal &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js?v=3"></script>
+<script src="site.js?v=3"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>
