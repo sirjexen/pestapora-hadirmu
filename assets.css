@@ -320,3 +320,20 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:#a53d64}
   .controls{gap:8px}
   .time{min-width:0}
 }
+
+/* daftar isi galeri: teks saja */
+.toc{list-style:none; margin:26px 0 6px; padding:0}
+.toc li{border-bottom:2px dashed rgba(213,87,127,.35)}
+.toc li:last-child{border-bottom:none}
+.toc a{display:flex; align-items:baseline; gap:14px; padding:15px 8px; text-decoration:none; transition:background .2s}
+.toc a:hover{background:rgba(255,240,245,.7)}
+.toc-num{font-family:'Caveat',cursive; font-size:19px; color:#a53d64; white-space:nowrap}
+.toc-title{font-family:'Fraunces',serif; font-size:clamp(19px,4.6vw,24px); letter-spacing:1.5px; color:#70424f}
+.toc-arrow{margin-left:auto; color:#d9577f; font-size:20px}
+/* halaman satu adegan */
+.scene-one{margin-top:20px; background:#fff; padding:9px; border-radius:4px; box-shadow:0 10px 22px rgba(91,74,66,.16)}
+.scene-one video{display:block; width:100%; height:auto; border-radius:2px}
+.scene-desc{margin-top:20px; line-height:1.8; color:var(--ink); font-size:16.5px}
+.scene-nav{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:26px; flex-wrap:wrap}
+.scene-nav a{font-family:'Quicksand',sans-serif; font-size:14px; font-weight:700; color:#a53d64; text-decoration:none;
+  background:#fff; padding:9px 16px; border-radius:999px; box-shadow:0 4px 10px rgba(91,74,66,.12)}

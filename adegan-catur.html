@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catur yang Dilama-lamain — Galeri Kita</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="assets.css">
+</head>
+<body>
+
+<nav class="pagenav" id="pagenav"></nav>
+
+<main id="main">
+  <section class="sheet" style="--tilt:.3deg">
+    <div class="tape tl"></div><div class="tape tr"></div>
+    <div class="kicker">galeri kita &middot; bab 4</div>
+    <h2>Catur yang Dilama-lamain</h2>
+    <div class="scene-one">
+      <video src="adegan/catur.mp4" poster="adegan/catur.jpg" autoplay muted loop playsinline></video>
+    </div>
+    <p class="scene-desc">Konon ada pertandingan catur yang sengaja dilama-lamain oleh kedua pemainnya, sebab tidak ada yang ingin permainan cepat selesai. Hari itu sang raja di seberang papan rebah juga, dan pemenangnya merayakan dengan dada membusung, sementara lawannya garuk-garuk kepala, mencari langkahnya yang hilang ke mana.</p>
+    <div class="scene-nav">
+      <a href="adegan-dosen.html">&larr; Dosen dan Satu Pendengarnya</a>
+      <a class="sn-back" href="galeri.html">Daftar Isi Galeri</a>
+      <a href="adegan-uno.html">Kartu Uno Berdua &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer id="footer" style="display:none">
+  <div class="fh">Pestapora Hadirmu</div>
+  dibuat oleh Rafly, untuk Melia &middot; 2026
+</footer>
+
+<script src="guard.js"></script>
+<script src="site.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('pagenav');
+  var here='galeri.html';
+  PAGES.forEach(function(p){
+    var a=document.createElement('a');
+    a.href=p.href; a.textContent=p.mt;
+    if(p.href===here) a.className='here';
+    a.style.setProperty('--r',(Math.random()*3-1.5).toFixed(1)+'deg');
+    nav.appendChild(a);
+  });
+  nav.style.display='flex';
+})();
+</script>
+</body>
+</html>
