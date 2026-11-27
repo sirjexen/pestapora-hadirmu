@@ -81,12 +81,12 @@
 
 /* ---------- pemutar album ---------- */
 var tracks=[
- {t:'First What I Seeing', f:'audio/01_First_What_I_Seeing.mp3', m:'Awal semuanya: sebuah taruhan yang berubah jadi obrolan, lalu permainan catur yang tidak mau cepat selesai.'},
- {t:'About You, R.', f:'audio/02_About_You_R.mp3', m:'Tentang seseorang yang digambarkan sebagai perpustakaan yang menjelma manusia; buku yang tidak bosan dibaca ulang.', img:'img/04_lagu_about_you_buku.jpg'},
- {t:"Fallin' for You", f:'audio/03_Fallin_for_You.mp3', m:'Pengakuan yang pelan-pelan: jatuh hati pada cara seseorang merangkai kata, dan pada nasihat yang tidak pernah terasa menggurui.'},
- {t:'WDYT About Penjelajah?', f:'audio/04_WDYT_About_Penjelajah.mp3', m:'Tentang si penjelajah yang pedulinya kebangetan, ditemani kucing kecil yang sama anehnya.', img:'img/06_lagu_penjelajah_kucing.jpg'},
- {t:'Look Like Batman', f:'audio/05_Look_Like_Batman.mp3', m:'Untuk yang memikul banyak hal tanpa banyak cerita. Panggung malamnya ada tepat di bawah daftar lagu ini.', img:'img/07_lagu_batman_buku.jpg'},
- {t:'Sajak Perayaan', f:'audio/06_Sajak_Perayaan.mp3', m:'Puisi ulang tahun ke-21, dibacakan langsung oleh penulisnya. Halaman khususnya ada di bab tiga.'}
+ {t:'First What I Seeing', f:'audio/01_First_What_I_Seeing.mp3', img:'img/lagu1_catur.jpg', m:'Awal semuanya: sebuah taruhan yang berubah jadi obrolan, lalu permainan catur yang tidak mau cepat selesai.'},
+ {t:'About You, R.', f:'audio/02_About_You_R.mp3', m:'Tentang seseorang yang digambarkan sebagai perpustakaan yang menjelma manusia; buku yang tidak bosan dibaca ulang.', img:'img/lagu2_buku.jpg'},
+ {t:"Fallin' for You", f:'audio/03_Fallin_for_You.mp3', img:'img/lagu3_baikan.jpg', m:'Pengakuan yang pelan-pelan: jatuh hati pada cara seseorang merangkai kata, dan pada nasihat yang tidak pernah terasa menggurui.'},
+ {t:'WDYT About Penjelajah?', f:'audio/04_WDYT_About_Penjelajah.mp3', m:'Tentang si penjelajah yang pedulinya kebangetan, ditemani kucing kecil yang sama anehnya.', img:'img/lagu4_penjelajah.jpg'},
+ {t:'Look Like Batman', f:'audio/05_Look_Like_Batman.mp3', m:'Untuk yang memikul banyak hal tanpa banyak cerita. Panggung malamnya ada tepat di bawah daftar lagu ini.', img:'img/lagu5_batman.jpg'},
+ {t:'Sajak Perayaan', f:'audio/06_Sajak_Perayaan.mp3', img:'img/lagu6_puisi.jpg', m:'Puisi ulang tahun ke-21, dibacakan langsung oleh penulisnya. Halaman khususnya ada di bab tiga.'}
 ];
 var audio=document.getElementById('player');
 var playlistEl=document.getElementById('playlist');
@@ -102,7 +102,7 @@ tracks.forEach(function(tr,i){
   var b=document.createElement('button');
   b.className='track'; b.type='button';
   var inner='<span class="num">'+(i+1)+'</span><span><span class="tt">'+tr.t+'</span><div class="mm">'+tr.m+'</div></span>';
-  if(tr.img){ inner+='<img loading="lazy" decoding="async" src="'+tr.img+'" alt="" style="width:74px;height:auto;border-radius:4px;margin-left:auto;transform:rotate(2deg);box-shadow:0 4px 10px rgba(91,74,66,.25)">'; }
+  if(tr.img){ inner+='<img loading="lazy" decoding="async" src="'+tr.img+'" alt="" style="width:110px;height:auto;border-radius:4px;margin-left:auto;transform:rotate(2deg);box-shadow:0 4px 10px rgba(91,74,66,.25)">'; }
   b.innerHTML=inner;
   b.addEventListener('click', function(){ playTrack(i); });
   playlistEl.appendChild(b);
