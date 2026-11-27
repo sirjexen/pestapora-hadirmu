@@ -338,30 +338,27 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:#a53d64}
 .floaty,.floaty.d1,.floaty.d2,.sticker,.beam,.bat,.bat.b2,.bat.b3,.hero-cape{animation:none !important}
 .envelope,.sheet,.cutout,.note,.menu a,.track{will-change:auto}
 
-/* ===== TALI RENCANA (halaman Cerita versi rencana ke depan) ===== */
-.thread{position:relative; margin-top:34px; padding:6px 0 2px}
-.thread::before{content:""; position:absolute; top:0; bottom:0; left:50%; width:5px; margin-left:-2.5px; border-radius:99px;
-  background:repeating-linear-gradient(180deg,#d9577f 0 14px,#f2a7c3 14px 28px); opacity:.75}
-.plan{position:relative; display:flex; align-items:center; gap:26px; margin:0 0 44px}
+/* ===== TALI RENCANA (tali di samping, dari gambar ke gambar) ===== */
+.thread{position:relative; margin-top:34px; padding:6px 0 2px; --line:170px}
+.thread::before{content:""; position:absolute; top:10px; bottom:10px; left:var(--line); width:5px; margin-left:-2.5px; border-radius:99px;
+  background:repeating-linear-gradient(180deg,#d9577f 0 14px,#f2a7c3 14px 28px); opacity:.8; z-index:0}
+.plan{position:relative; display:flex; align-items:flex-start; gap:30px; margin:0 0 46px}
 .plan:last-child{margin-bottom:6px}
-.plan .ph{flex:0 0 42%; position:relative; background:#fff; padding:8px 8px 24px; border-radius:3px;
+.plan .ph{flex:0 0 340px; position:relative; z-index:1; background:#fff; padding:8px 8px 24px; border-radius:3px;
   box-shadow:0 4px 10px rgba(91,74,66,.14); transform:rotate(var(--r,-1.6deg))}
 .plan .ph img{display:block; width:100%; height:auto; border-radius:2px}
 .plan .ph .cap{position:absolute; left:0; right:0; bottom:3px; text-align:center; font-family:'Caveat',cursive; font-size:16px; color:#6f5a4e}
 .plan .clip{position:absolute; top:-14px; left:50%; transform:translateX(-50%) rotate(-3deg); width:64px; height:20px;
   background:var(--tape); box-shadow:0 2px 4px rgba(91,74,66,.12); z-index:2}
-.plan .tx{flex:1}
+.plan .tx{flex:1; padding-top:8px}
 .plan .tx .no{font-family:'Caveat',cursive; color:#a53d64; font-size:19px}
 .plan .tx h3{font-family:'Fraunces',serif; font-size:21px; color:#70424f; margin-bottom:5px}
 .plan .tx p{font-size:15.5px; line-height:1.75}
-.plan .knot{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:19px; height:19px; border-radius:50%;
+.plan .knot{position:absolute; left:var(--line); top:2px; transform:translate(-50%,0); width:19px; height:19px; border-radius:50%;
   background:#d9577f; border:4px solid #fdf3e3; box-shadow:0 0 0 2px #d9577f; z-index:2}
-.plan:nth-child(even){flex-direction:row-reverse}
-.plan:nth-child(even) .tx{text-align:right}
 @media(max-width:640px){
-  .thread::before{left:9px; margin-left:0}
-  .plan,.plan:nth-child(even){flex-direction:column; align-items:stretch; gap:14px; padding-left:30px}
-  .plan .ph{flex:none; width:88%}
-  .plan .knot{left:9px; transform:translate(0,-50%)}
-  .plan:nth-child(even) .tx{text-align:left}
+  .thread{--line:min(140px,42vw)}
+  .plan{flex-direction:column; gap:14px}
+  .plan .ph{flex:none; width:min(280px,84vw)}
+  .plan .tx{padding-top:0}
 }
