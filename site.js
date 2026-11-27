@@ -26,7 +26,9 @@ function spawnPetals(n, burstFrom){
       (function(el){ setTimeout(function(){ el.remove(); },1800); })(p);
     }else{
       p.className='petal';
+      if(window.innerWidth<640 && i>=3) return;
       p.style.left=(Math.random()*98)+'vw';
+      (function(el){ setTimeout(function(){ el.remove(); },15000+Math.random()*6000); })(p);
       p.style.animationDuration=(9+Math.random()*9)+'s';
       p.style.animationDelay=(-Math.random()*14)+'s';
       document.body.appendChild(p);
@@ -42,10 +44,10 @@ function celebrate(){
   var seal=document.getElementById('seal');
   if(seal){ seal.style.transition='transform .35s ease, opacity .35s ease'; seal.style.transform='translate(-50%,-50%) scale(1.9) rotate(18deg)'; seal.style.opacity='0'; }
   /* gelombang pertama: semburan dari segel */
-  spawnPetals(26,true);
+  spawnPetals(18,true);
   /* gelombang kedua dan ketiga: hujan kelopak dari atas layar */
-  setTimeout(function(){ spawnPetals(22,false); }, 350);
-  setTimeout(function(){ spawnPetals(22,false); }, 900);
+  setTimeout(function(){ spawnPetals(6,false); }, 350);
+  setTimeout(function(){ spawnPetals(4,false); }, 900);
   /* layar berkedip hangat sesaat, seperti kilat kamera scrapbook */
   var flash=document.createElement('div');
   flash.style.cssText='position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(circle at 50% 45%, rgba(255,214,229,.85), rgba(255,214,229,0) 70%);opacity:0;transition:opacity .3s ease';
@@ -59,7 +61,7 @@ function celebrate(){
 (function(){
   var gate = document.getElementById('gate');
   if(!gate){
-    spawnPetals(14,false);
+    spawnPetals(6,false);
     document.getElementById('main').classList.add('show');
     var f0=document.getElementById('footer'); if(f0) f0.style.display='block';
     return;
@@ -68,7 +70,7 @@ function celebrate(){
   var input = document.getElementById('keyInput');
   var hint = document.getElementById('gateHint');
   var envelope = document.getElementById('envelope');
-  spawnPetals(14,false);
+  spawnPetals(6,false);
 
   form.addEventListener('submit', function(e){
     e.preventDefault();

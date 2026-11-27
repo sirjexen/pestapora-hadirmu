@@ -19,7 +19,7 @@ body.locked{overflow:hidden}
 ::selection{background:var(--pink); color:#fff}
 
 /* ---------- kelopak beterbangan ---------- */
-.petal{position:fixed; top:-4vh; z-index:40; pointer-events:none;
+.petal{position:fixed; top:-4vh; z-index:40; pointer-events:none; will-change:transform;
   background:radial-gradient(ellipse at 30% 30%, #ffd9e6, #f2a7c3);
   border-radius:80% 0 80% 0; opacity:.85;
   animation:fall linear infinite;}
@@ -129,7 +129,7 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 .floaty{animation:floaty 5.5s ease-in-out infinite}
 .floaty.d1{animation-duration:6.5s; animation-delay:.8s}
 .floaty.d2{animation-duration:7.2s; animation-delay:1.6s}
-@keyframes floaty{0%,100%{margin-top:0}50%{margin-top:-10px}}
+@keyframes floaty{0%,100%{transform:rotate(var(--r,-2deg)) translateY(0)}50%{transform:rotate(var(--r,-2deg)) translateY(-10px)}}
 
 /* stiker melayang */
 .sticker{position:absolute; z-index:2; pointer-events:none; opacity:.9;
