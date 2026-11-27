@@ -416,14 +416,14 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:#a53d64}
 .cert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:8px}
 @media(max-width:900px){ .cert-grid{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:560px){ .cert-grid{grid-template-columns:1fr} }
-.mini-cert{position:relative; cursor:pointer; border-radius:6px; padding:16px 14px 13px; min-height:148px;
+.mini-cert{position:relative; cursor:pointer; border-radius:6px; padding:12px 12px 10px; min-height:112px;
   background:#fffdf6; border:2px solid var(--acc,#d9577f); box-shadow:0 4px 10px rgba(91,74,66,.12); overflow:hidden;
   transition:transform .15s ease}
 .mini-cert:hover{transform:translateY(-3px) rotate(-.4deg)}
 .mini-cert .mc-no{position:absolute; top:8px; left:10px; font-family:'Caveat',cursive; font-size:14px; color:#a08b7a}
 .mini-cert .mc-kick{font-size:9.5px; letter-spacing:2.5px; color:var(--acc,#d9577f); text-align:center; font-family:'Fraunces',serif}
-.mini-cert .mc-name{font-family:'Caveat',cursive; font-size:23px; color:#a53d64; text-align:center; line-height:1.1; margin-top:2px}
-.mini-cert .mc-award{font-family:'Fraunces',serif; font-size:14.5px; color:#70424f; text-align:center; line-height:1.35; margin-top:5px}
+.mini-cert .mc-name{font-family:'Caveat',cursive; font-size:20px; color:#a53d64; text-align:center; line-height:1.1; margin-top:2px}
+.mini-cert .mc-award{font-family:'Fraunces',serif; font-size:13.5px; color:#70424f; text-align:center; line-height:1.35; margin-top:5px}
 .mini-cert .mc-stamp{position:absolute; right:8px; bottom:8px; width:40px; height:40px; border-radius:50%;
   border:2px solid rgba(178,43,82,.65); color:rgba(178,43,82,.8); transform:rotate(-13deg);
   display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:8.5px; font-weight:700; letter-spacing:.5px}
