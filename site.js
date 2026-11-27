@@ -112,3 +112,32 @@ function initReveal(){
   document.querySelectorAll('.sheet').forEach(function(s){ io.observe(s); });
 }
 if(unlocked()) initReveal();
+
+/* video adegan: ketuk poster untuk memutar, hanya satu video dalam satu waktu */
+(function(){
+  var current=null;
+  function stopCurrent(){
+    if(!current) return;
+    var v=current.querySelector('video');
+    if(v){ v.pause(); v.remove(); }
+    var img=current.querySelector('img.tap-poster');
+    if(img) img.style.display='';
+    current.classList.remove('playing');
+    current=null;
+  }
+  document.addEventListener('click', function(e){
+    var box=e.target.closest('[data-video]');
+    if(!box) return;
+    if(box===current){ stopCurrent(); return; }
+    stopCurrent();
+    var img=box.querySelector('img.tap-poster');
+    var v=document.createElement('video');
+    v.src=box.getAttribute('data-video');
+    v.muted=true; v.loop=true; v.playsInline=true; v.autoplay=true;
+    if(img){ v.poster=img.getAttribute('src'); img.style.display='none'; }
+    box.appendChild(v);
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    box.classList.add('playing');
+    current=box;
+  });
+})();

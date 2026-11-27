@@ -274,9 +274,26 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 .menu a .mt{font-family:'Fraunces',serif; font-size:16.5px; color:#70424f}
 .menu a .md{font-family:'Caveat',cursive; font-size:15px; color:#6f5a4e}
 /* kartu video adegan */
-.vids{display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:26px; margin-top:26px}
-.vids .cutout{width:100%}
-.vids video{width:100%; display:block; border-radius:2px; aspect-ratio:1; object-fit:cover}
+/* galeri dongeng: satu adegan satu bab, ketuk poster untuk memutar */
+.scenes{display:flex; flex-direction:column; gap:36px; margin-top:28px}
+.scene{display:grid; grid-template-columns:1fr; gap:16px; align-items:center}
+@media(min-width:680px){
+  .scene{grid-template-columns:1.15fr 1fr; gap:28px}
+  .scene:nth-child(even) .scene-media{order:2}
+}
+.scene-media{position:relative; background:#fff; padding:9px; border-radius:4px;
+  box-shadow:0 10px 22px rgba(91,74,66,.16); transform:rotate(var(--r,-1deg))}
+.scene-media img,.scene-media video{display:block; width:100%; height:auto; border-radius:2px}
+[data-video]{cursor:pointer}
+.play-badge{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); z-index:3;
+  width:62px; height:62px; border-radius:50%; background:rgba(213,87,127,.93);
+  box-shadow:0 8px 20px rgba(91,74,66,.35); display:flex; align-items:center; justify-content:center;
+  pointer-events:none}
+.play-badge::after{content:""; border-style:solid; border-width:11px 0 11px 18px;
+  border-color:transparent transparent transparent #fff; margin-left:5px}
+[data-video].playing .play-badge{display:none}
+.scene-txt h3{font-family:'Fraunces',serif; color:#70424f; font-size:22px; margin:0 0 8px}
+.scene-txt p{line-height:1.75; color:var(--ink); margin:0}
 /* navigasi bawah antar halaman */
 .pagenav{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin:6px auto 40px; padding:0 18px; max-width:860px}
 .pagenav a{font-family:'Quicksand',sans-serif; font-size:13.5px; font-weight:700; color:#a53d64;
