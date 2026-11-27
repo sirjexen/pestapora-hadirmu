@@ -8,11 +8,7 @@
 html{scroll-behavior:smooth}
 body{
   font-family:'Quicksand',sans-serif; color:var(--ink); overflow-x:hidden;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(247,200,216,.35) 0 90px, transparent 91px),
-    radial-gradient(circle at 85% 70%, rgba(247,200,216,.28) 0 120px, transparent 121px),
-    radial-gradient(rgba(217,87,127,.10) 1.6px, transparent 1.7px) 0 0/26px 26px,
-    linear-gradient(160deg,#fdf3e3,#fdeef4 55%,#fdf3e3);
+  background:linear-gradient(160deg,#fdf3e3,#fdeef4 55%,#fdf3e3);
   min-height:100vh;
 }
 body.locked{overflow:hidden}
@@ -97,12 +93,11 @@ main{max-width:860px; margin:0 auto; padding:34px 18px 70px; display:none}
 main.show{display:block}
 .sheet{position:relative; background:var(--paper); border-radius:6px;
   padding:clamp(26px,5vw,48px); margin:0 auto 54px;
-  box-shadow:0 14px 34px rgba(91,74,66,.14), 0 2px 0 rgba(255,255,255,.7) inset;
+  box-shadow:0 6px 16px rgba(91,74,66,.10);
   opacity:0; transform:translateY(34px) rotate(var(--tilt,0deg));
   transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.3,1);}
 .sheet.in{opacity:1; transform:translateY(0) rotate(var(--tilt,0deg))}
-.sheet::before{content:""; position:absolute; inset:0; border-radius:6px; pointer-events:none;
-  background:radial-gradient(rgba(217,87,127,.05) 1px, transparent 1.4px) 0 0/18px 18px}
+.sheet::before{content:none}
 .tape{position:absolute; width:110px; height:30px; background:var(--tape);
   border-left:2px dotted rgba(255,255,255,.65); border-right:2px dotted rgba(255,255,255,.65);
   box-shadow:0 2px 5px rgba(91,74,66,.12); z-index:3}
@@ -118,7 +113,7 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 
 /* potongan gambar (cutout) */
 .cutout{position:relative; display:inline-block; background:#fff; padding:9px 9px 26px;
-  box-shadow:0 10px 22px rgba(91,74,66,.20); border-radius:3px;
+  box-shadow:0 4px 10px rgba(91,74,66,.14); border-radius:3px;
   transform:rotate(var(--r,-2deg)); transition:transform .35s ease}
 .cutout:hover{transform:rotate(0deg) scale(1.03)}
 .cutout img{display:block; width:100%; height:auto; border-radius:2px}
@@ -337,3 +332,8 @@ footer .fh{font-family:'Caveat',cursive; font-size:22px; color:#a53d64}
 .scene-nav{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:26px; flex-wrap:wrap}
 .scene-nav a{font-family:'Quicksand',sans-serif; font-size:14px; font-weight:700; color:#a53d64; text-decoration:none;
   background:#fff; padding:9px 16px; border-radius:999px; box-shadow:0 4px 10px rgba(91,74,66,.12)}
+
+/* ===== MODE RINGAN (2026-11-27): animasi terus-menerus dimatikan demi scroll mulus ===== */
+.petal,.burst-petal{display:none !important}
+.floaty,.floaty.d1,.floaty.d2,.sticker,.beam,.bat,.bat.b2,.bat.b3,.hero-cape{animation:none !important}
+.envelope,.sheet,.cutout,.note,.menu a,.track{will-change:auto}

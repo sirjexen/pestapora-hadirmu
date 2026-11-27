@@ -10,6 +10,7 @@ var PAGES = [
 ];
 
 function spawnPetals(n, burstFrom){
+  return; /* kelopak dimatikan total demi scroll ringan (2026-11-27, keluhan lag di MacBook) */
   for(var i=0;i<n;i++){
     var p=document.createElement('div');
     var s=9+Math.random()*12;
