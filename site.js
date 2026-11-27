@@ -5,8 +5,8 @@ var PAGES = [
   {href:'cerita.html',       mi:'📖', mt:'Cerita Kita', md:'lima lembar',          r:'1.2deg'},
   {href:'galeri.html',       mi:'🎬', mt:'Galeri',      md:'video pendek',         r:'-1deg'},
   {href:'album.html',        mi:'🎵', mt:'Album',       md:'enam lagunya Melia',   r:'1.5deg'},
-  {href:'puisi-sertifikat.html', mi:'📜', mt:'Puisi & Sertifikat', md:'sajak & penghargaan', r:'-1.8deg'},
-  {href:'pesan-surat.html',  mi:'💌', mt:'Pesan & Surat', md:'lembar terakhir',    r:'1deg'}
+  {href:'puisi.html', mi:'📜', mt:'Puisi & Sertifikat', md:'sajak & penghargaan', r:'-1.8deg'},
+  {href:'pesan.html',  mi:'💌', mt:'Pesan & Surat', md:'lembar terakhir',    r:'1deg'}
 ];
 
 function spawnPetals(n, burstFrom){

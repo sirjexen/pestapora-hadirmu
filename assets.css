@@ -249,7 +249,7 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 /* pesan-pesan kecil */
 .notes{display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:20px; margin-top:26px}
 .note{position:relative; padding:30px 18px 18px; border-radius:3px;
-  font-family:'Caveat',cursive; font-size:20.5px; line-height:1.5; color:#6b4a56;
+  font-family:'Quicksand',sans-serif; font-size:16px; line-height:1.65; color:var(--ink); font-weight:600;
   box-shadow:0 8px 18px rgba(91,74,66,.16); transform:rotate(var(--r,-1.5deg));
   transition:transform .3s ease}
 .note:hover{transform:rotate(0deg) scale(1.04); z-index:2}
@@ -258,10 +258,9 @@ h2{font-size:clamp(26px,4.6vw,36px); margin-bottom:8px; line-height:1.15}
 .note.p1{background:#fff0f5}.note.p2{background:#fff8ea}.note.p3{background:#fdeef4}.note.p4{background:#fffdf4}
 
 /* surat */
-.letter{background:
-  repeating-linear-gradient(180deg, transparent 0 33px, rgba(231,124,162,.14) 33px 34px), var(--paper)}
-.letter .body{font-family:'Caveat',cursive; font-size:clamp(21px,4.4vw,26px);
-  line-height:1.65; color:#6b4a56}
+.letter{background:var(--paper)}
+.letter .body{font-family:'Quicksand',sans-serif; font-size:17.5px;
+  line-height:1.85; color:var(--ink)}
 .letter .sign{font-family:'Caveat',cursive; font-size:30px; color:#a53d64; text-align:right; margin-top:10px}
 
 /* ---------- menu navigasi antar halaman ---------- */
